@@ -2,9 +2,8 @@
 
 namespace App\DesignPatterns\Fundamental\PropertyContainer;
 
-class AboutPattern implements \App\DesignPatterns\AboutPattern
+class AboutPattern extends \App\DesignPatterns\AbstractAboutPattern
 {
-
     public function name(): string
     {
         return 'Property container';
@@ -21,6 +20,9 @@ class AboutPattern implements \App\DesignPatterns\AboutPattern
         $post->setCategoryId(5);
         $post->setTitle('Футбол Євро 2023');
 
+        echo $this->textFormatter->pGrayText('Стандартний пост об\'єкт');
+        dump($post);
+
         $post->propertyContainer->addProperty('top', true);
 
         $post->propertyContainer->addProperty('viewCount', 2000);
@@ -29,6 +31,7 @@ class AboutPattern implements \App\DesignPatterns\AboutPattern
         $post->propertyContainer->addProperty('rating', 5);
         $post->propertyContainer->deleteProperty('rating');
 
-        return $post;
+        echo $this->textFormatter->pGrayText('Пост об\'єкт після добавлення додаткових властивостей через контейнер');
+        dump($post);
     }
 }

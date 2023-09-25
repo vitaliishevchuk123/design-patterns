@@ -13,5 +13,10 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Property container</span> Контейнер властивостей
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'delegation-pattern') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Delegation pattern</span> Шаблон делегування
+            </a>
+        </li>
     </ol>
 </div>

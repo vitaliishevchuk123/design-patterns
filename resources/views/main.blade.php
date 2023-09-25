@@ -54,7 +54,7 @@
                                     {{ $patternDescription->description() }}
                                 </p>
                                 <p class="mt-4">
-                                    @dump($patternDescription->example())
+                                    {{ $patternDescription->example() }}
                                 </p>
                             </div>
                         </div>
