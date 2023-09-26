@@ -29,4 +29,14 @@
             </a>
         </li>
     </ol>
+
+    <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Creational</h2>
+
+    <ol class="mt-4 max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
+        <li>
+            <a href="{{ route('patterns', 'abstract-factory') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Abstract factory</span> Абстрактна фабрика
+            </a>
+        </li>
+    </ol>
 </div>

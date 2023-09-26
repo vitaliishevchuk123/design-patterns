@@ -9,6 +9,7 @@ class PatternFactory
         'delegation-pattern' => \App\DesignPatterns\Fundamental\DelegationPattern\AboutPattern::class,
         'event-channel' => \App\DesignPatterns\Fundamental\EventChannel\AboutPattern::class,
         'interface' => \App\DesignPatterns\Fundamental\Interface\AboutPattern::class,
+        'abstract-factory' => \App\DesignPatterns\Creational\AbstractFactory\AboutPattern::class,
     ];
 
     /**
