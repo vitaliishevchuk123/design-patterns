@@ -23,5 +23,10 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Event channel</span> Канал подій
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'interface') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Interface</span> Інтерфейс
+            </a>
+        </li>
     </ol>
 </div>
