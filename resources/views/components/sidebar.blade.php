@@ -18,5 +18,10 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Delegation pattern</span> Шаблон делегування
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'event-channel') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Event channel</span> Канал подій
+            </a>
+        </li>
     </ol>
 </div>
