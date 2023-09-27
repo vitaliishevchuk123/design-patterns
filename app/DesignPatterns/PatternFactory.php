@@ -18,7 +18,8 @@ class PatternFactory
     public function handle(string $url): AboutPattern
     {
         if (!array_key_exists($url, self::$available)) {
-            throw new \Exception('Pattern description does not exist!');
+//            throw new \Exception('Pattern description does not exist!');
+            abort(404);
         }
         return new self::$available[$url]();
     }

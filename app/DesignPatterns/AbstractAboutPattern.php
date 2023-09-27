@@ -12,10 +12,4 @@ abstract class AbstractAboutPattern implements AboutPattern
     {
         $this->textFormatter = new TextFormatter();
     }
-
-    abstract public function name(): string;
-
-    abstract public function description(): string;
-
-    abstract public function example();
 }

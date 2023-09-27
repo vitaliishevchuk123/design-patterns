@@ -10,7 +10,7 @@ class BlogPost
 
     public function __construct()
     {
-        $this->propertyContainer = new PropertyContainer;
+        $this->propertyContainer = new PropertyContainer();
     }
 
     public function setCategoryId(int $categoryId): void
