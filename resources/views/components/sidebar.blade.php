@@ -38,5 +38,10 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Abstract factory</span> Абстрактна фабрика
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'factory-method') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Factory method</span> Фабричний метод
+            </a>
+        </li>
     </ol>
 </div>
