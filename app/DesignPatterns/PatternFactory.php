@@ -13,6 +13,7 @@ class PatternFactory
         'factory-method' => \App\DesignPatterns\Creational\FactoryMethod\AboutPattern::class,
         'singleton' => \App\DesignPatterns\Creational\Singleton\AboutPattern::class,
         'builder' => \App\DesignPatterns\Creational\Builder\AboutPattern::class,
+        'lazy-initialization' => \App\DesignPatterns\Creational\LazyInitialization\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
     ];
 
