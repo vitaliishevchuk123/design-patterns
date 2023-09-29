@@ -43,5 +43,10 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Factory method</span> Фабричний метод
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'singleton') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Singleton</span> Одинак
+            </a>
+        </li>
     </ol>
 </div>
