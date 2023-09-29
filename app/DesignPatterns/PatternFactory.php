@@ -12,6 +12,7 @@ class PatternFactory
         'abstract-factory' => \App\DesignPatterns\Creational\AbstractFactory\AboutPattern::class,
         'factory-method' => \App\DesignPatterns\Creational\FactoryMethod\AboutPattern::class,
         'singleton' => \App\DesignPatterns\Creational\Singleton\AboutPattern::class,
+        'builder' => \App\DesignPatterns\Creational\Builder\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
     ];
 
