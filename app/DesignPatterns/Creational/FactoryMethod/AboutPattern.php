@@ -18,6 +18,8 @@ class AboutPattern extends \App\DesignPatterns\AbstractAboutPattern
 
     public function example()
     {
+        echo $this->textFormatter->image(asset('images/patterns/factory.png'));
+
         echo $this->textFormatter->pGrayText('В залежності від виклику класа наслідника буде реалізація класу, що вказаний у фабричному методі');
 
 //        $dialogForm = new BootstrapDialogForm();

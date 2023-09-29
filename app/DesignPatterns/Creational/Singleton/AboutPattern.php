@@ -16,6 +16,7 @@ class AboutPattern extends \App\DesignPatterns\AbstractAboutPattern
 
     public function example()
     {
+        echo $this->textFormatter->image(asset('images/patterns/singleton.png'));
         echo $this->textFormatter->pGrayText('Перший раз створюємо обʼєкт як одинака і наділяємо властивістю');
         $postFirst = PostSingleton::getInstance();
         $postFirst->setText('First text!');

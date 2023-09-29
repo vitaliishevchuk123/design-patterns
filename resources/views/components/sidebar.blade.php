@@ -58,6 +58,11 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Lazy initialization</span> Лінива ініціалізація
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'prototype') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Prototype</span> Прототип
+            </a>
+        </li>
     </ol>
 
     <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Behavioral</h2>

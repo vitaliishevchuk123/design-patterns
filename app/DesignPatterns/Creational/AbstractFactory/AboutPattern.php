@@ -16,6 +16,8 @@ class AboutPattern extends \App\DesignPatterns\AbstractAboutPattern
 
     public function example()
     {
+        echo $this->textFormatter->image(asset('images/patterns/abstract-factory.png'));
+
         echo $this->textFormatter->pGrayText('Приклад: Графічний інтерфейс користувача(GUI, Graphical user interface)');
 
         $guiKit = (new GuiKitFactory())->getFactory('bootstrap');
