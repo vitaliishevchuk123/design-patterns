@@ -65,6 +65,16 @@
         </li>
     </ol>
 
+    <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Structural</h2>
+
+    <ol class="mt-4 max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
+        <li>
+            <a href="{{ route('patterns', 'adapter') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Adapter</span> Адаптер
+            </a>
+        </li>
+    </ol>
+
     <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Behavioral</h2>
 
     <ol class="mt-4 max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">

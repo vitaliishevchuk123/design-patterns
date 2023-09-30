@@ -25,9 +25,9 @@ class AboutPattern extends \App\DesignPatterns\AbstractAboutPattern
         $client->addOrder($order);
         $clonedOrder = clone $order;
         $clonedOrder->deliveryDate->addDay();
-        echo $this->textFormatter->pGrayText('Створюєм клієнта');
+        echo $this->textFormatter->pGrayText('Створюємо клієнта');
         dump($client);
-        echo $this->textFormatter->pGrayText('Створюєм замовлення клієнту');
+        echo $this->textFormatter->pGrayText('Створюємо замовлення клієнту');
         dump($order);
         echo $this->textFormatter->pGrayText('Клонуємо замовлення');
         dump($clonedOrder);
