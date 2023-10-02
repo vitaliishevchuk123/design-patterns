@@ -13,6 +13,6 @@ class PatternsDescriptionController extends Controller
     public function __invoke(Request $request, string $url = 'property-container')
     {
         $patternDescription = (new PatternFactory())->handle($url);
-        return view('main', compact('patternDescription'));
+        return view('pattern', compact('patternDescription'));
     }
 }

@@ -13,4 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('{pattern?}', \App\Http\Controllers\PatternsDescriptionController::class)->name('patterns');
+Route::get('patterns/{pattern?}', \App\Http\Controllers\PatternsDescriptionController::class)->name('patterns');
+Route::get('definitions', \App\Http\Controllers\DefinitionController::class)->name('definitions');

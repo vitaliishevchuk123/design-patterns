@@ -17,6 +17,7 @@ class PatternFactory
         'prototype' => \App\DesignPatterns\Creational\Prototype\AboutPattern::class,
         'adapter' => \App\DesignPatterns\Structural\Adapter\AboutPattern::class,
         'facade' => \App\DesignPatterns\Structural\Facade\AboutPattern::class,
+        'bridge' => \App\DesignPatterns\Structural\Bridge\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
     ];
 
