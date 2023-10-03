@@ -14,9 +14,14 @@ trait Singleton
     {
     }
 
-    private function __wakeup()
-    {
-    }
+    /**
+     * Закоментував оскільки пхп 8 кидає варнінг
+     * During class fetch: Uncaught ErrorException: The magic method ...Traits\Singleton::__wakeup()
+     * must have public visibility
+     */
+//    private function __wakeup()
+//    {
+//    }
 
     public static function getInstance()
     {
