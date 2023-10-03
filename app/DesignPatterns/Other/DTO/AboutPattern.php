@@ -2,8 +2,6 @@
 
 namespace App\DesignPatterns\Other\DTO;
 
-use App\DesignPatterns\Structural\Adapter\Contracts\MediaLibraryInterface;
-
 class AboutPattern extends \App\DesignPatterns\AbstractAboutPattern
 {
     public function name(): string
