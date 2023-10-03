@@ -104,4 +104,14 @@
             </a>
         </li>
     </ol>
+
+    <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Other</h2>
+
+    <ol class="mt-4 max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
+        <li>
+            <a href="{{ route('patterns', 'dto') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">DTO</span> Об’єкт передачі даних
+            </a>
+        </li>
+    </ol>
 </div>

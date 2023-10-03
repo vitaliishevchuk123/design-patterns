@@ -21,6 +21,7 @@ class PatternFactory
         'composite' => \App\DesignPatterns\Structural\Composite\AboutPattern::class,
         'decorator' => \App\DesignPatterns\Structural\Decorator\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
+        'dto' => \App\DesignPatterns\Other\DTO\AboutPattern::class,
     ];
 
     /**
