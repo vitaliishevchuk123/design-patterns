@@ -88,6 +88,11 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Composite</span> Компонувальник
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'decorator') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Decorator</span> Декоратор
+            </a>
+        </li>
     </ol>
 
     <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Behavioral</h2>
