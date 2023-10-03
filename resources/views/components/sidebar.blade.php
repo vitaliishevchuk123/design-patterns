@@ -83,6 +83,11 @@
                 <span class="font-semibold text-gray-900 dark:text-white">Bridge</span> Міст
             </a>
         </li>
+        <li>
+            <a href="{{ route('patterns', 'composite') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Composite</span> Компонувальник
+            </a>
+        </li>
     </ol>
 
     <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Behavioral</h2>
