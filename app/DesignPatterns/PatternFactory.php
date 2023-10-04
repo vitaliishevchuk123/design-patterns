@@ -20,6 +20,7 @@ class PatternFactory
         'bridge' => \App\DesignPatterns\Structural\Bridge\AboutPattern::class,
         'composite' => \App\DesignPatterns\Structural\Composite\AboutPattern::class,
         'decorator' => \App\DesignPatterns\Structural\Decorator\AboutPattern::class,
+        'proxy' => \App\DesignPatterns\Structural\Proxy\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
         'dto' => \App\DesignPatterns\Other\DTO\AboutPattern::class,
     ];
