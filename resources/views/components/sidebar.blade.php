@@ -104,6 +104,11 @@
 
     <ol class="mt-4 max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">
         <li>
+            <a href="{{ route('patterns', 'chain-responsibility') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Chain of Responsibility</span> Ланцюжок обов'язків
+            </a>
+        </li>
+        <li>
             <a href="{{ route('patterns', 'strategy') }}">
                 <span class="font-semibold text-gray-900 dark:text-white">Strategy</span> Стратегія
             </a>
