@@ -114,6 +114,11 @@
             </a>
         </li>
         <li>
+            <a href="{{ route('patterns', 'specification') }}">
+                <span class="font-semibold text-gray-900 dark:text-white">Specification</span> Специфікація
+            </a>
+        </li>
+        <li>
             <a href="{{ route('patterns', 'template-method') }}">
                 <span class="font-semibold text-gray-900 dark:text-white">TemplateMethod</span> Шаблонний метод
             </a>

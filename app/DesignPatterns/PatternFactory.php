@@ -24,6 +24,7 @@ class PatternFactory
         'chain-responsibility' => \App\DesignPatterns\Behavioral\ChainResponsibility\AboutPattern::class,
         'template-method' => \App\DesignPatterns\Behavioral\TemplateMethod\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
+        'specification' => \App\DesignPatterns\Behavioral\Specification\AboutPattern::class,
         'dto' => \App\DesignPatterns\Other\DTO\AboutPattern::class,
     ];
 
