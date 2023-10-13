@@ -29,11 +29,11 @@ class GeneralTab extends Component
                 'active' => Route::currentRouteName() == 'definitions',
                 'link' => route('definitions'),
             ],
-//            [
-//                'name' => 'SOLID',
-//                'active' => false,
-//                'link' => null,
-//            ],
+            [
+                'name' => 'SOLID',
+                'active' => Route::currentRouteName() == 'solid',
+                'link' => route('solid'),
+            ],
         ];
     }
 
