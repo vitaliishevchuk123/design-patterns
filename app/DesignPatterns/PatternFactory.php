@@ -25,6 +25,7 @@ class PatternFactory
         'template-method' => \App\DesignPatterns\Behavioral\TemplateMethod\AboutPattern::class,
         'strategy' => \App\DesignPatterns\Behavioral\Strategy\AboutPattern::class,
         'specification' => \App\DesignPatterns\Behavioral\Specification\AboutPattern::class,
+        'observer' => \App\DesignPatterns\Behavioral\Observer\AboutPattern::class,
         'dto' => \App\DesignPatterns\Other\DTO\AboutPattern::class,
     ];
 
