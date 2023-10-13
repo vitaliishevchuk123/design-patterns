@@ -5,6 +5,9 @@
         </svg>
     </div>
 
+    <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">
+        <a href="{{ route('patterns', 'about') }}"> About </a>
+    </h2>
     <h2 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">Fundamental</h2>
 
     <ol class="mt-4 max-w-md space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400">

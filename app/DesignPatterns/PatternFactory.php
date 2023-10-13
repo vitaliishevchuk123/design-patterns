@@ -5,6 +5,7 @@ namespace App\DesignPatterns;
 class PatternFactory
 {
     public static array $available = [
+        'about' => BasicAbout::class,
         'property-container' => \App\DesignPatterns\Fundamental\PropertyContainer\AboutPattern::class,
         'delegation-pattern' => \App\DesignPatterns\Fundamental\DelegationPattern\AboutPattern::class,
         'event-channel' => \App\DesignPatterns\Fundamental\EventChannel\AboutPattern::class,

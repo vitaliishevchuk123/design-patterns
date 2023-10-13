@@ -19,6 +19,11 @@ class TextFormatter
         return '<img src="' . $path . '" class="mt-6 h-auto max-w-full" alt="..."/>';
     }
 
+    public function imageCustom(string $path, string $class): string
+    {
+        return '<img src="' . $path . '" class="' . $class . '" alt="..."/>';
+    }
+
     public function zoomImage(string $path): string
     {
         return '<img src="' . $path . '"class="mt-6 h-auto max-w-full hover:scale-150 transition duration-500" alt="..."/>';
