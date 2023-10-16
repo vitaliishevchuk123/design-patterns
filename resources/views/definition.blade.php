@@ -2,9 +2,8 @@
 @section('content')
     <div class="mt-6">
         <div
-            class="col-span-2 scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+            class="col-span-2 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex">
             <div>
-
                 <h2 class="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
                     Основні принципи
                     <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
@@ -232,6 +231,28 @@ class PaypalGateway implements PaymentGateway
                 <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/import-users.png') }}" alt="import users"/>
                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
                     Чисто, чи не так? Ми можемо повторно використати наш код CreateUser, вставивши його в метод Collection::map(), а потім повернути колекцію, що містить усіх щойно створених користувачів. Ми могли б покращити його, повернувши нульовий об’єкт, коли електронний лист є дублікатом, або завантаживши цю інформацію в файл журналу, тощо...
+                </p>
+                <h2 class="mb-4 mt-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        KISS
+                    </span>
+                </h2>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    KISS - Keep It Simple, Stupid! (Код має бути простим)
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Принцип KISS стверджує, що програмне забезпечення має бути максимально простим. Це робить код легшим для розуміння, тестування та підтримки.
+                </p>
+                <h2 class="mb-4 mt-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        YAGNI
+                    </span>
+                </h2>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    YAGNI - You Ain't Gonna Need It! (Тобі це не знадобиться!)
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Принцип YAGNI означає завжди впроваджувати речі тільки тоді, коли вони дійсно потрібні, і ніколи не впроваджувати речі до того, як вони знадобляться.
                 </p>
                 <x-hr/>
 
