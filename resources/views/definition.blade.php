@@ -155,6 +155,86 @@ class PaypalGateway implements PaymentGateway
                 </p>
                 <x-hr/>
 
+                <h2 class="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        DRY
+                    </span>
+                </h2>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    DRY - Don't repeat yourself(Не повторюйся)
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Наприклад, більшість програм матимуть форму для реєстрації користувачів, яка буде викликати контролер і повертати значуще подання залежно від успіху чи невдачі. Якщо також є мобільний додаток, він, ймовірно, матиме кінцеву точку API, призначену для реєстрації користувачів, яка повертатиме JSON. Досить часто також є команда artisan для створення користувачів(Сідери, Фабрики), особливо на ранній стадії розробки.
+                </p>
+                <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/user-controllers.png') }}" alt="user controllers"/>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Це дублювання коду може здатися досить нешкідливим, але все ж, якщо логіка зростає, наприклад, якщо ви хочете надіслати сповіщення електронною поштою новозареєстрованому користувачеві, вам доведеться не забути надіслати його з обох контролерів. Отже, якщо ми хочемо зберегти наш код СУХИМ, нам потрібно перемістити його кудись в інше місце.
+                </p>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Загальною відповіддю на цю проблему є те, що ви знайдете в будь-якій темі форуму: «використовуйте клас обслуговування та викликайте його з вашого контролера». Добре, але як мені структурувати свій клас обслуговування? Чи створювати мені UserService для реалізації всієї логіки щодо користувачів, яку я буду вводити скрізь, де це потрібно? Або щось інше?
+                </p>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Спочатку може виникнути спокуса створити окремий клас і згрупувати весь код, який стосується конкретної моделі. Щось на зразок цього :
+                </p>
+                <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/user-service.png') }}" alt="user service"/>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Це виглядає досить задовільно: ми можемо викликати або використовувати методи створення/видалення з будь-якого контролера, а потім обробити результат будь-яким способом. Отже, у чому проблема цього підходу? Проблема в тому, що ми рідко маємо справу з окремими моделями окремо.
+                </p>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Скажімо, коли користувач створює обліковий запис, разом із ним створюється новий блог. Якщо ми дотримуємося нашого поточного підходу, ми повинні створити клас BlogService, який буде впроваджено як залежність від нашого класу UserService:
+                </p>
+                <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/user-service-with-blog.png') }}" alt="user service with blog"/>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Легко передбачити, що коли наші додатки зростуть, ми матимемо десятки класів обслуговування, деякі з них мають 5 або 6 інших класів обслуговування як залежність, що закінчиться тим безладним кодом спагетті, якого ми хочемо уникнути за всяку ціну.
+                </p>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    Представляємо клас єдиної дії
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Отже, що, якщо замість того, щоб мати один єдиний сервіс клас з кількома методами, ми вирішимо розділити його на кілька класів?
+                </p>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Отже, що, якщо замість того, щоб мати один єдиний сервіс клас з кількома методами, ми вирішимо розділити його на кілька класів?
+                </p>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    По-перше, давайте відмовимося від терміна сервіс клас, який є надто загальним і розпливчастим, і назвемо наші нові класи діями(action класи), і визначимо, що вони собою являють і що вони можуть робити.
+                </p>
+                <ul class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxe list-disc list-inside">
+                    <li>Клас дій повинен мати назву, яка сама собою зрозуміла, що він робить, наприклад: CreateOrder, ConfirmCheckout, DeleteProduct, AddProductToCart тощо…</li>
+                    <li>Він повинен мати лише один публічний метод як API. В ідеалі це має бути завжди те саме ім’я методу, наприклад handle() або execute(). Це зручно, якщо нам потрібно реалізувати якийсь шаблон адаптера для наших дій.</li>
+                    <li>Він має бути агностиком запиту/відповіді. Він не працює з класом Request і не надсилає відповідь. Цю відповідальність несе контролер.</li>
+                    <li>Він може мати інші дії як залежність.</li>
+                    <li>Він повинен забезпечувати дотримання бізнес-правил, створюючи виняткову ситуацію, якщо щось заважає їй виконати та/або повернути очікуване значення, і залишити викликаючому (або ExceptionHandler laravel) відповідальність за те, як відобразити/відреагувати на виняток.</li>
+                </ul>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    Створення нашого action класу CreateUser
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Тепер давайте візьмемо наш попередній приклад і переробимо його за допомогою одного класу дій, який ми назвемо CreateUser.
+                </p>
+                <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/create-user-action.png') }}" alt="create user action"/>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Ви, мабуть, запитаєтеся, чому метод створює виняток, якщо електронний лист уже зайнято. Чи не слід подбати про це шляхом перевірки запиту? Звичайно, так. Однак доцільно застосувати бізнес-правила всередині самого класу дій. Це робить логіку більш очевидною для сприйняття, а налагодження простіше.
+                </p>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Ось нова версія наших контролерів, які використовують наші класи дій:
+                </p>
+                <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/controllers-using-actions.png') }}" alt="controllers using actions"/>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Тепер будь-які зміни, які ми внесемо в процес реєстрації користувачів, відбуватимуться як у версії API, так і в веб-версії. Гарно та чисто.
+                </p>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    Ще використання нашого action класу CreateUser
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Скажімо, нам потрібна дія, щоб імпортувати 1000 користувачів у нашу програму. Ми можемо написати клас дії для цього імпорту, який повторно використовуватиме клас CreateUser:
+                </p>
+                <img class="mt-4 h-auto max-w-full" src="{{ asset('images/dry/import-users.png') }}" alt="import users"/>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Чисто, чи не так? Ми можемо повторно використати наш код CreateUser, вставивши його в метод Collection::map(), а потім повернути колекцію, що містить усіх щойно створених користувачів. Ми могли б покращити його, повернувши нульовий об’єкт, коли електронний лист є дублікатом, або завантаживши цю інформацію в файл журналу, тощо...
+                </p>
+                <x-hr/>
+
                 <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
                     Що таке наслідування, композиція та агрегація
                 </h2>
