@@ -412,18 +412,71 @@ echo Car::getModel(); // 'car'
                     Якщо слово «self» замінити на «static», ми отримаємо «пізнє статичне зв'язування», тобто. зв'язок
                     буде встановлений з тим класом, який викликає цей код, в результаті отримаємо значення «car».
                 </p>
+
+                <h2 class="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+                    Dependency injection
+                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        (DI)
+                    </span>
+                </h2>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    Що таке Dependency injection (ін’єкція залежності)?
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    DI — це спосіб передачі об’єктів, необхідних класу для виконання своїх завдань, як параметрів його конструктору або методам, а не створення їх усередині класу. Таким чином, класу не потрібно знати, як створити або налаштувати ці об’єкти, і він може зосередитися на власній логіці. Це також полегшує тестування класу, оскільки ви можете імітувати або заглушити залежності та ізолювати поведінку класу. DI також підтримує принцип інверсії контролю, який означає, що клас не контролює свої залежності, а скоріше залежить від зовнішньої сутності, яка забезпечує їх.
+                </p>
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    Різні способи ін’єкції об’єктів
+                </h2>
+                <x-code code="
+//Constructor Injection
+class Profile
+{
+    private $setting;
+    public function __construct(Setting $setting)
+    {
+        $this->setting = $setting;
+    }
+}
+// to instantiate Profile, you have to instantiate Setting first
+$setting = new Setting;
+$profile = new Profile($setting);
+"
+                />
+                <x-code code="
+//Setter Injection
+class Profile
+{
+    private $setting;
+    public function setSetting(Setting $setting)
+    {
+        $this->setting = $setting;
+    }
+}
+// to instantiate Profile, you have the option to inject Setting object
+$setting = new Setting;
+$profile = new Profile();
+$profile->setSetting($setting);
+"
+                />
                 <x-hr/>
 
 
-                {{--            <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">--}}
-                {{--            </h2>--}}
-                {{--            <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">--}}
-                {{--            </p>--}}
-                {{--            <x-code code="--}}
+{{--                <h2 class="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">--}}
+{{--                    Основні принципи--}}
+{{--                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">--}}
+{{--                        ООП--}}
+{{--                    </span>--}}
+{{--                </h2>--}}
+{{--                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">--}}
+{{--                </h2>--}}
+{{--                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">--}}
+{{--                </p>--}}
+{{--                <x-code code="--}}
 
-                {{--"--}}
-                {{--            />--}}
-                {{--            <x-hr/>--}}
+{{--                "--}}
+{{--                />--}}
+{{--                <x-hr/>--}}
             </div>
         </div>
     </div>
