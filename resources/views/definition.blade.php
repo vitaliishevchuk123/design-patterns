@@ -630,6 +630,30 @@ echo $name; // Виведе 'John'
 echo $age;  // Виведе 30
                 "
                 />
+
+
+                <h2 class="mb-4 mt-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+                    Інкременти в
+                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        ПХП
+                    </span>
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    У PHP існують два основних оператори інкременту: постфіксний і префіксний. Ці оператори дозволяють збільшувати значення змінної на одиницю.
+                </p>
+                <x-code code="
+//Постфіксний інкремент ($x++)
+
+$x = 5;
+$y = $x++; // $y отримає 5, а потім $x збільшиться на 1
+
+//Префіксний інкремент (++$x)
+
+$x = 5;
+$y = ++$x; // $x збільшиться на 1, а потім $y отримає 6
+
+                "
+                />
                 <x-hr/>
 
                 {{--                <h2 class="mb-4 mt-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">--}}
