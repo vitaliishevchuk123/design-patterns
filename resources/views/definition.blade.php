@@ -5,6 +5,119 @@
             class="col-span-2 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex">
             <div>
                 <h2 class="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
+                    <span
+                        class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                        HTTP
+                    </span>
+                    response status codes
+                </h2>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    429 Too Many Requests
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Код статусу відповіді HTTP 429 Too Many Requests означає, що користувач надіслав забагато запитів
+                    заданий проміжок часу («rate limit»).
+                    До цієї відповіді може бути включений заголовок Retry-After, який вказує, як довго чекати, перш ніж
+                    зробити
+                    новий запит.
+                </p>
+                <x-code code="
+HTTP/1.1 429 Too Many Requests
+Content-Type: text/html
+Retry-After: 3600
+                "
+                />
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    200 OK
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Успішний запит» - якщо клієнтом були запитані будь-які дані, то вони знаходяться в заголовках і /
+                    або тілі відповіді.
+                </p>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    204 No Content
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Немає вмісту» - сервер успішно обробив запит, але у відповіді були передані тільки заголовки.
+                </p>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    301 Moved Permanently
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Ресурс переміщений назавжди» - документ був остаточно перенесений на новий URI, зазначений в
+                    заголовку Location.
+                </p>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    302 Found
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Переміщено тимчасово» - запитаний документ тимчасово доступний по іншому URI, винесеному в
+                    заголовок Location.
+                </p>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    401 Unauthorized
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Неавторизований запит» - для доступу необхідно ввести логін і пароль.
+                </p>
+                <x-code code='
+HTTP/1.1 401 Unauthorized
+Date: Wed, 21 Oct 2015 07:28:00 GMT
+WWW-Authenticate: Basic realm="Access to staging site"
+                '
+                />
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    403 Forbidden
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Доступ до ресурсу заборонено» - сервер зрозумів запит, але він відмовляється його виконувати через
+                    обмеження в доступі для клієнта до зазначеного ресурсу. Тут відмінність з 401 полягає в тому, що
+                    користувач авторизувався, але не має доступу до цієї сторінки.
+                </p>
+                <x-code code='
+HTTP/1.1 403 Forbidden
+Date: Wed, 21 Oct 2015 07:28:00 GMT
+                '
+                />
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    404 Not Found
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    «Ресурс не найден» - документ не існує.
+                </p>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    405 Method Not Allowed
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    "Неприпустимий метод» - вказаний клієнтом метод не можна застосувати до поточного ресурсу.У
+                    відповіді сервер повинен вказати доступні методи в заголовку Allow, розділивши їх комою.
+                </p>
+
+                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                    500 Internal Server Error
+                </h2>
+                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                    Внутрішня помилка сервера.Зазвичай виникає через помилки у файлі .htaccess або критичної помилки PHP
+                    при відключеному показі помилок.
+                </p>
+                <x-code code='
+500 Internal Server Error
+                '
+                />
+
+                <x-hr/>
+
+
+                <h2 class="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
                     Основні принципи
                     <span
                         class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
@@ -576,7 +689,8 @@ $profile->setSetting($setting);
                     Приклад використання Spread оператора:
                 </h3>
                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                    Spread оператор в PHP дозволяє розгортати (розпаковувати) елементи масиву для подальшого використання.
+                    Spread оператор в PHP дозволяє розгортати (розпаковувати) елементи масиву для подальшого
+                    використання.
                 </p>
                 <x-code code="
 $arr1 = [1, 2, 3];
@@ -589,7 +703,8 @@ print_r($arr2); // [4, 5, 1, 2, 3]
                     Приклад використання Rest оператора:
                 </h3>
                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                    Rest параметр в PHP дозволяє функціям приймати змінну кількість аргументів в одному параметрі, як масив.
+                    Rest параметр в PHP дозволяє функціям приймати змінну кількість аргументів в одному параметрі, як
+                    масив.
                 </p>
                 <x-code code="
 function sum(...$numbers) {
@@ -603,7 +718,8 @@ echo sum(1, 2, 3, 4, 5); // 15
 
                 <h2 class="mb-4 mt-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
                     Деструктуризація
-                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                    <span
+                        class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
                         (destructuring)
                     </span>
                 </h2>
@@ -611,7 +727,9 @@ echo sum(1, 2, 3, 4, 5); // 15
                     Деструктуризація (destructuring) приклад
                 </h3>
                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                    Деструктуризація (destructuring) в PHP дозволяє розпаковувати значення масивів або об'єктів і призначати їх змінним окремо. Це дуже зручна функція, яка спрощує доступ до елементів масивів та властивостей об'єктів. В PHP деструктуризація доступна починаючи з версії PHP 7.1 і вище.
+                    Деструктуризація (destructuring) в PHP дозволяє розпаковувати значення масивів або об'єктів і
+                    призначати їх змінним окремо. Це дуже зручна функція, яка спрощує доступ до елементів масивів та
+                    властивостей об'єктів. В PHP деструктуризація доступна починаючи з версії PHP 7.1 і вище.
                 </p>
                 <x-code code="
 //Деструктуризація масиву:
@@ -634,12 +752,14 @@ echo $age;  // Виведе 30
 
                 <h2 class="mb-4 mt-4 text-center text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-4xl dark:text-white">
                     Інкременти в
-                    <span class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
+                    <span
+                        class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">
                         ПХП
                     </span>
                 </h2>
                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                    У PHP існують два основних оператори інкременту: постфіксний і префіксний. Ці оператори дозволяють збільшувати значення змінної на одиницю.
+                    У PHP існують два основних оператори інкременту: постфіксний і префіксний. Ці оператори дозволяють
+                    збільшувати значення змінної на одиницю.
                 </p>
                 <x-code code="
 //Постфіксний інкремент ($x++)
