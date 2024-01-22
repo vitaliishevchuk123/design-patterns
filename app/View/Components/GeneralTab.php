@@ -34,6 +34,11 @@ class GeneralTab extends Component
                 'active' => Route::currentRouteName() == 'solid',
                 'link' => route('solid'),
             ],
+            [
+                'name' => 'Laravel tips',
+                'active' => Route::currentRouteName() == 'laravel-tips',
+                'link' => route('laravel-tips'),
+            ],
         ];
     }
 

@@ -19,3 +19,4 @@ Route::get('/', function () {
 Route::get('patterns/{pattern?}', \App\Http\Controllers\PatternsDescriptionController::class)->name('patterns');
 Route::get('definitions', \App\Http\Controllers\DefinitionController::class)->name('definitions');
 Route::get('solid', \App\Http\Controllers\SolidController::class)->name('solid');
+Route::get('laravel-tips', \App\Http\Controllers\TipsController::class)->name('laravel-tips');
