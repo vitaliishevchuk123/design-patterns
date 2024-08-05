@@ -39,6 +39,11 @@ class GeneralTab extends Component
                 'active' => Route::currentRouteName() == 'laravel-tips',
                 'link' => route('laravel-tips'),
             ],
+            [
+                'name' => 'Vue js',
+                'active' => Route::currentRouteName() == 'vue-js',
+                'link' => route('vue-js'),
+            ],
         ];
     }
 

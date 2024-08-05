@@ -20,3 +20,4 @@ Route::get('patterns/{pattern?}', \App\Http\Controllers\PatternsDescriptionContr
 Route::get('definitions', \App\Http\Controllers\DefinitionController::class)->name('definitions');
 Route::get('solid', \App\Http\Controllers\SolidController::class)->name('solid');
 Route::get('laravel-tips', \App\Http\Controllers\TipsController::class)->name('laravel-tips');
+Route::get('vue-js', \App\Http\Controllers\VueJsController::class)->name('vue-js');
